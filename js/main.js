@@ -64,31 +64,30 @@ const getRandomItems = (items) => {
 
 const getOffer = () => {
   const offer = [];
-
-  for (let i = 0; i < 10; i++) {
-    const offers = {
-      autor: {
-        avatar: `img/avatars/user 0${getRandomFloat(1, 8)}.png`,
+  const offers = {
+    autor: {
+      avatar: `img/avatars/user 0${getRandomFloat(1, 8)}.png`,
+    },
+    offer: {
+      title: 'Мое объявление',
+      adress: {
+        x: getRandomInRange(35.65000, 35.70000),
+        y: getRandomInRange(139.70000, 139.80000),
       },
-      offer: {
-        title: 'Мое объявление',
-        adress: {
-          x: getRandomInRange(35.65000, 35.70000),
-          y: getRandomInRange(139.70000, 139.80000),
-        },
-        price: getRandomInRange(100, 1000),
-        // eslint-disable-next-line no-undef
-        type: getRandomItem(TYPES),
-        rooms: getRandomInRange(1, 10),
-        guests: getRandomInRange(0, 10),
-        // eslint-disable-next-line no-undef
-        checkIn: getRandomItem(CHECKINS),
-        checkOut: getRandomItem(CHECKOUTS),
-        features: getRandomItems(FEATURES),
-        description: 'Описание помещения',
-        photos: getRandomItems(FOTOS),
-      },
-    }
+      price: getRandomInRange(100, 1000),
+      // eslint-disable-next-line no-undef
+      type: getRandomItem(TYPES),
+      rooms: getRandomInRange(1, 10),
+      guests: getRandomInRange(0, 10),
+      // eslint-disable-next-line no-undef
+      checkIn: getRandomItem(CHECKINS),
+      checkOut: getRandomItem(CHECKOUTS),
+      features: getRandomItems(FEATURES),
+      description: 'Описание помещения',
+      photos: getRandomItems(FOTOS),
+    },
+  };
+  for (let i = 0; i < offers.length - 1; i++) {
     offer.push(offers);
   }
   return offer;
