@@ -4,7 +4,7 @@ import {
   CHECKOUTS,
   FEATURES,
   FOTOS
-} from './const.js';
+} from './consts.js';
 
 
 const getRandomFloat = (min, max) => {
@@ -36,7 +36,7 @@ const getRandomItems = (items) => {
 
   while (result.length - 1 < itemCount) {
     const randomItem = getRandomItem(items);
-    if (!result.includes(getRandomItem)) {
+    if (!result.includes(randomItem)) {
       result.push(randomItem)
     }
   }
@@ -47,13 +47,13 @@ const getOffer = () => {
 
   return {
     autor: {
-      avatar: `img/avatars/user 0${getRandomFloat(1, 8)}.png`,
+      avatar: `img/avatars/user0${getRandomInRange(1, 8)}.png`,
     },
     offer: {
       title: 'Мое объявление',
-      adress: {
-        x: getRandomInRange(35.65000, 35.70000),
-        y: getRandomInRange(139.70000, 139.80000),
+      address: {
+        x: getRandomFloat(35.65000, 35.70000),
+        y: getRandomFloat(139.70000, 139.80000),
       },
       price: getRandomInRange(100, 1000),
       type: getRandomItem(TYPES),

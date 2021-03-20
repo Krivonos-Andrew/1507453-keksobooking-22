@@ -1,5 +1,4 @@
 import getOffers from './data.js';
-
+import showCard from './card.js';
 const offers = getOffers();
-// eslint-disable-next-line no-console
-console.log(offers);
+showCard(offers[0]);
